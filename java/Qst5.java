@@ -1,27 +1,18 @@
 public class Qst5 {
     public static void main(String[] args) {
-        int num = 0; 
-        int r;
+    
+        System.out.println("Sequência de Fibonacci até atingir 100:");
 
-        String input = System.console().readLine("Insira um número: ");
-        try {
-            num = Integer.parseInt(input);
-        } catch (NumberFormatException e) {
-            num = -1; 
+        int num1 = 1;
+        int num2 = 1;
+
+        while (num1 <= 100) {
+            System.out.print(num1 + " ");
+            int temp = num1 + num2;
+            num1 = num2;
+            num2 = temp;
         }
 
-        r = fibonacci(num);
-
-        if (r == -1) {
-            System.out.println("\nEntrada inválida. Insira um número maior que 0.");
-        } else {
-            System.out.printf("\nO número correspondente na sequência Fibonacci de %d é: %d\n", num, fibonacci(num));
-        }
-    }
-
-    public static int fibonacci(int n) {
-        if (n == 1) return 1;
-        if (n == 2) return 1;
-        return fibonacci(n - 1) + fibonacci(n - 2);
+        System.out.println("\n\nFim da sequência de Fibonacci.");
     }
 }
