@@ -1,34 +1,20 @@
-import java.util.Scanner;
-
-public class Fatorial {
+public class Qst6 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int num = 5;
+        System.out.println("CALCULADORA DE FATORIAIS.\n");
 
-        if (scanner.hasNextInt()) {
-            int num = scanner.nextInt();
+        int x = 10; 
 
-            if (num >= 0) {
-                int r = fatorial(num);
-
-                if (r != -1) {
-                    System.out.printf("\nO fatorial de %d é: %d\n", num, r);
-                } else {
-                    System.out.println("\nEntrada inválida. Insira um número maior que 0.");
-                }
-            } else {
-                System.out.println("\nEntrada inválida. Insira um número maior ou igual a 0.");
-            }
-        } else {
-            System.out.println("\nEntrada inválida. Insira um número válido.");
+        while (x < 0) {
+            System.out.println("Número inválido. Tente novamente.");
+            System.out.print("Digite um número positivo: ");
         }
 
-        scanner.close();
-    }
-
-    public static int fatorial(int n) {
-        if (n == 0) return 1;
-        if (n > 0) return n * fatorial(n - 1);
-        return -1;
+        for (int i = 1; i <= x; i++) {
+            int fat = 1;
+            for (int j = i; j >= 2; j--) {
+                fat *= j;
+            }
+            System.out.printf("%d! = %d%n", i, fat);
+        }
     }
 }
